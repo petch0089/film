@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love 💖</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        h1 {
+            font-size: 3rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .message {
+            font-size: 1.5rem;
+            max-width: 80%;
+            animation: fadeIn 4s ease-in-out;
+        }
+        .image-container {
+            margin-top: 20px;
+            animation: fadeIn 5s ease-in-out;
+        }
+        .image-container img {
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: pink;
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 80%, 18% 100%, 0% 38%);
+            animation: float 5s infinite ease-in-out;
+            opacity: 0.8;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- เพิ่มปุ่มในส่วนของ <body> -->
+    <div class="container">
+        <h1>💖 Surprise for You 💖</h1>
+        <p class="message">You are my world, my love, my everything. Every moment with you is magical. 💕</p>
+        <div class="image-container">
+            <img src="01.jpg" alt="Our Beautiful Moment">
+        </div>
+        <button class="love-button">Click for Sweet Message</button>
+<div class="message-container"></div>
+    </div>
+    <audio autoplay loop>
+        <source src="003.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
+            
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 500);
+    
+        // เพิ่มโค้ดนี้ไปที่ด้านล่างสุด
+        document.body.addEventListener("click", function(event) {
+        // จำนวนหัวใจที่ต้องการให้เด้งขึ้นมา
+        const heartCount = 5;
+        
+        for (let i = 0; i < heartCount; i++) {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
+            
+            // สุ่มตำแหน่งเล็กน้อย
+            const x = event.clientX + Math.random() * 40 - 20; // สุ่มตำแหน่งในระยะ 20px รอบๆ ตำแหน่งที่คลิก
+            const y = event.clientY + Math.random() * 40 - 20; // สุ่มตำแหน่งในระยะ 20px รอบๆ ตำแหน่งที่คลิก
+            heart.style.left = `${x - 10}px`; // ปรับให้หัวใจอยู่ที่จุดที่คลิก
+            heart.style.top = `${y - 10}px`;
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+    });
+    document.body.addEventListener("click", function(event) {
+        const heartCount = 5; // จำนวนหัวใจที่ต้องการให้เด้งขึ้นมา
+        
+        for (let i = 0; i < heartCount; i++) {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
+            
+            // สุ่มตำแหน่งเล็กน้อย
+            const x = event.clientX + Math.random() * 40 - 20;
+            const y = event.clientY + Math.random() * 40 - 20;
+            heart.style.left = `${x - 10}px`;
+            heart.style.top = `${y - 10}px`;
+
+            // เพิ่มการแอนิเมชันและลูกเล่น
+            heart.style.animation = `float 5s ease-in-out, scale 1s ease-in-out forwards, rotate 2s linear infinite`;
+
+            // ทำให้หัวใจหายไปหลังจาก 5 วินาที
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+    });
+    
+</script>
+
+<style>
+    /* เพิ่มแอนิเมชันการขยายและหมุน */
+    @keyframes scale {
+        0% {
+            transform: scale(1);
+            opacity: 0.8;
+        }
+        50% {
+            transform: scale(1.5);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 0.8;
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: pink;
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 80%, 18% 100%, 0% 38%);
+        animation: float 5s ease-in-out, scale 1s ease-in-out forwards, rotate 2s linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-30px); }
+        100% { transform: translateY(0); }
+    }
+</style>
+</script>
+
+<style>
+/* เพิ่มแอนิเมชันการขยายและหมุน */
+@keyframes scale {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 80%, 18% 100%, 0% 38%);
+    animation: float 5s ease-in-out, scale 1s ease-in-out forwards, rotate 2s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+    .love-button {
+        background-color: #ff69b4;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.5rem;
+        color: white;
+        border-radius: 30px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: transform 0.2s ease;
+    }
+
+    .love-button:hover {
+        transform: scale(1.1);
+    }
+
+    .love-message {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #ff69b4;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+        animation: fadeInMessage 2s ease-in-out;
+    }
+
+    @keyframes fadeInMessage {
+        0% { transform: translateY(-50px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+</style>
+    </script>
+    <script>
+    // ฟังก์ชันการแสดงข้อความหวานๆ เมื่อกดปุ่ม
+    const loveButton = document.querySelector('.love-button');
+    const messageContainer = document.querySelector('.message-container');
+
+    loveButton.addEventListener("click", function() {
+        // เพิ่มข้อความหวานๆ
+        const message = document.createElement("div");
+        message.classList.add("love-message");
+        message.innerHTML = "You are my heart, my love, my forever. ❤️";
+        
+        messageContainer.appendChild(message);
+
+        // ลบข้อความหลังจาก 4 วินาที
+        setTimeout(() => {
+            message.remove();
+        }, 4000);
+    });
+    
+</script>
+</body>
+</html>
